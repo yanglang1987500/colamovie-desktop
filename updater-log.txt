@@ -300,3 +300,27 @@ AppPathFolder:
 1.0.8
 TypeError: Cannot read property 'version' of undefined
 API response is not valid
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.2
+No updates available
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.1
+No updates available
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.1
+No updates available
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.1
+No updates available
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.1
+No updates available
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.1
+Update available: 1.0.3
