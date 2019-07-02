@@ -275,3 +275,28 @@ Update available: 1.0.3
 Update available: 1.0.3
 1.0.2
 Update available: 1.0.3
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.8
+TypeError: Cannot read property 'version' of undefined
+API response is not valid
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.8
+TypeError: Cannot read property 'version' of undefined
+API response is not valid
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.8
+TypeError: Cannot read property 'version' of undefined
+API response is not valid
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.8
+TypeError: Cannot read property 'version' of undefined
+API response is not valid
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.8
+TypeError: Cannot read property 'version' of undefined
+API response is not valid

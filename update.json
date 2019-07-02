@@ -1,6 +1,6 @@
 {
   "name": "colamovie-desktop",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "asar": "http://ptz0pgtd0.bkt.clouddn.com/update.zip",
   "info": "1.fix bug\n2.feat"
 }
