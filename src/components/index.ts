@@ -9,3 +9,4 @@ export { default as ScrollLazyList } from "./scrollList/scrollLazyList";
 export { default as ScrollList } from "./scrollList/scrollList";
 export { default as NoInformation } from "./noData";
 export { default as MobileProgress } from "./progress/mobileProgress";
+export { default as Player } from "./player/index";

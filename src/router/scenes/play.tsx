@@ -2,21 +2,19 @@ import React from "react";
 import classnames from "classnames";
 import { inject, observer } from "mobx-react";
 import Drawer from 'rc-drawer';
+import Switch from "react-switch";
 import 'rc-drawer/assets/index.css';
 import { Business, IBusinessProps } from "@business/index";
 import { RouteComponentProps, Link } from 'react-router-dom';
-import { Spin } from "@components";
+import { Spin, Player } from "@components";
 import { getParam, isMac } from '@common/utils';
 import Header from "./header";
-import Player from 'react-player';
 import DLNA from '@common/utils/dlna';
 import { history } from '@common/utils/history';
 
 @inject(Business)
 @observer
 class Play extends React.Component<IPlayProps, IPlayStates> {
-
-  player: any;
 
   state: IPlayStates = {
     album: null,
@@ -40,25 +38,15 @@ class Play extends React.Component<IPlayProps, IPlayStates> {
     if (!album) {
       getVideoByVodIdAndVodName(albumId, albumName).then(album => {
         this.dealWithAlbumAndIndex(album);
-        this.seekTo();
       });
       return;
     };
     this.dealWithAlbumAndIndex(album);
-    this.seekTo();
   }
 
   componentWillUnmount() { }
 
-  componentDidUpdate(prevProps: IPlayProps, prevState: IPlayStates) {
-    this.seekTo();
-  }
 
-  seekTo() {
-    setTimeout(() => {
-      this.player && this.player.seekTo(this.getProgressFromHistory(), 'seconds');
-    }, 10);
-  }
 
   dealWithAlbumAndIndex(album: IAlbum) {
     const index = getParam('index');
@@ -132,11 +120,11 @@ class Play extends React.Component<IPlayProps, IPlayStates> {
           <Header home back search push onPush={this.onPushBtnClick} title={album.vod_name} />
           {!iina && <div style={{ textAlign: 'center', marginBottom: 20 }}>
             <Player
-              ref={dom => this.player = dom }
               onProgress={(data: IPlayerProcess) => this.onTimeUpdate(data)}
               style={{ display: 'inline-block'}}
               width="100%"
               controls
+              initialTime={this.getProgressFromHistory()}
               progressInterval={2000}
               url={url}
               playing
@@ -152,7 +140,19 @@ class Play extends React.Component<IPlayProps, IPlayStates> {
             <div className="video-desc">导演： {album.vod_director}</div>
             <div className="video-desc">演员： {album.vod_actor}</div>
             <div className="video-desc">介绍： {album.vod_content}</div>
-            { isMac() && <div className="video-desc">调用iina播放： <input type="checkbox" onChange={() => this.setState({ iina: !iina })} /></div>}
+            { isMac() && <div className="video-desc">调用iina播放： 
+            <span style={{ position: 'relative', top: 5 }}><Switch onChange={() => this.setState({ iina: !iina })} checked={this.state.iina} 
+              onColor="#86d3ff"
+              onHandleColor="#147296"
+              handleDiameter={20}
+              uncheckedIcon={false}
+              checkedIcon={false}
+              boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+              activeBoxShadow="0px 0px 1px 5px rgba(0, 0, 0, 0.2)"
+              height={20}
+              width={38}
+              className="react-switch"
+            /></span></div> }
           </div>
           
           <div className={`video-desc at-row at-row--wrap choose-list ${expand ? 'expand' : ''}`}>

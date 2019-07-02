@@ -1,6 +1,6 @@
 {
   "name": "colamovie-desktop",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "productName": "Cola Movie",
   "description": "colamovie-desktop",
   "main": "./app/main.js",
@@ -15,7 +15,8 @@
   "license": "ISC",
   "dependencies": {
     "electron-asar-hot-updater-sniyve": "^1.0.2",
-    "nodecast-js": "^1.0.3"
+    "nodecast-js": "^1.0.3",
+    "react-switch": "^5.0.0"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",

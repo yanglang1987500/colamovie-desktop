@@ -324,3 +324,77 @@ AppPath: D:\workspace\colamovie-desktop/
 AppPathFolder: 
 1.0.1
 Update available: 1.0.3
+AppPath: /Users/yanglang/Documents/workspace/colamovie-desktop/
+AppPathFolder: 
+AppPath: /Users/yanglang/Documents/workspace/colamovie-desktop/
+AppPathFolder: 
+1.0.1
+No updates available
+AppPath: /Users/yanglang/Documents/workspace/colamovie-desktop/
+AppPathFolder: 
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
+1.0.1
+No updates available
