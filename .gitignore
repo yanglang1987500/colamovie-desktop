@@ -8,5 +8,5 @@ fe-toolkit/*
 scripts/*
 coverage/
 coverage/*
-update.zip
+*.zip
 app/node_modules/

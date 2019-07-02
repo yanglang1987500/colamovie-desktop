@@ -15,7 +15,7 @@ exports.default = function(context) {
   zip.file('update.asar', fs.readFileSync('./update.asar'));
   isWin32 && walk('app.asar.unpacked', zip);
   const data = zip.generate({ base64:false, compression: 'DEFLATE' });
-  fs.writeFileSync('update.zip', data, 'binary');
+  fs.writeFileSync(isWin32 ? 'update-win32.zip' : 'update-darwin.zip', data, 'binary');
   fs.unlink('./update.asar', () => {});
   fs.remove('./app.asar.unpacked', () => {});
 }

@@ -5,7 +5,7 @@ let fn = () => {};
 module.exports = {
   init: () => {
     EAU.init({
-      'api': 'http://ptz0pgtd0.bkt.clouddn.com/update.json', // The API EAU will talk to
+      'api': process.platform === 'darwin' ? 'http://ptz0pgtd0.bkt.clouddn.com/update-darwin.json' : 'http://ptz0pgtd0.bkt.clouddn.com/update-win32.json', // The API EAU will talk to
       'server': false, // Where to check. true: server side, false: client side, default: true.
       'debug': true, // Default: false.
       'body': {
