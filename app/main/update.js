@@ -12,7 +12,8 @@ module.exports = {
       'body': {
         name: packageInfo.name,
         current: packageInfo.version
-      }
+      },
+      'formatRes': function(res) { res.asar = res.asar + '?t='+new Date().getTime(); return res; }
     });
   },
   check: (callback) => {
