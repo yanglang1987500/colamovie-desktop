@@ -5,7 +5,7 @@ let fn = () => {};
 module.exports = {
   init: () => {
     EAU.init({
-      'api': 'https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.json', // The API EAU will talk to
+      'api': 'http://ptz0pgtd0.bkt.clouddn.com/update.json', // The API EAU will talk to
       'server': false, // Where to check. true: server side, false: client side, default: true.
       'debug': true, // Default: false.
       'body': {
