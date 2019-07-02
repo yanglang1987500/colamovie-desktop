@@ -1,0 +1,277 @@
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+Do something after request finishes
+ZipFilePath: 
+Updater.update.file: update.asar
+Update Zip downloaded: 
+Checking for update.asar
+Going to shell out to move: update.asar to: D:\workspace\colamovie-desktop
+Going to start the windows updater:D:\workspace\colamovie-desktopupdater.exe update.asar app.asar C:\Users\lang.yang\AppData\Roaming\npm\node_modules\electron\dist\electron.exe
+Shelling out to move failed: Error: Invalid package app.asar
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+Do something after request finishes
+ZipFilePath: 
+Updater.update.file: update.asar
+Update Zip downloaded: 
+Checking for update.asar
+Going to shell out to move: update.asar to: D:\workspace\colamovie-desktop
+Going to start the windows updater:D:\workspace\colamovie-desktopupdater.exe update.asar app.asar C:\Users\lang.yang\AppData\Roaming\npm\node_modules\electron\dist\electron.exe
+Shelling out to move failed: Error: Invalid package app.asar
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.1
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.1
+No updates available
+1.0.1
+Error: connect ECANCELED 151.101.108.133:443
+Could not connect
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.1
+No updates available
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+1.0.0
+Error: connect ECANCELED 151.101.228.133:443
+Could not connect
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+1.0.0
+Update available: 1.0.1
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+Do something after request finishes
+ZipFilePath: 
+Updater.update.file: update.asar
+Update Zip downloaded: 
+Checking for update.asar
+Going to shell out to move: update.asar to: D:\workspace\colamovie-desktop
+Going to start the windows updater:D:\workspace\colamovie-desktopupdater.exe update.asar app.asar C:\Users\lang.yang\AppData\Roaming\npm\node_modules\electron\dist\electron.exe
+Shelling out to move failed: Error: Invalid package app.asar
+1.0.0
+Update available: 1.0.1
+1.0.0
+Error: connect ECANCELED 151.101.228.133:443
+Could not connect
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip
+Do something after request finishes
+ZipFilePath: 
+Updater.update.file: update.asar
+Update Zip downloaded: 
+Checking for update.asar
+Going to shell out to move: update.asar to: D:\workspace\colamovie-desktop
+Going to start the windows updater:D:\workspace\colamovie-desktopupdater.exe update.asar app.asar C:\Users\lang.yang\AppData\Roaming\npm\node_modules\electron\dist\electron.exe
+Shelling out to move failed: Error: Invalid package app.asar
+AppPath: /Users/yanglang/Documents/workspace/rsp/
+AppPathFolder: 
+1.0.2
+AppPath: /Users/yanglang/Documents/workspace/rsp/
+AppPathFolder: 
+1.0.2
+Update available: 1.0.3
+1.0.2
+Update available: 1.0.3
+1.0.2
+Update available: 1.0.3
+1.0.2
+Update available: 1.0.3
+1.0.2
+Update available: 1.0.3

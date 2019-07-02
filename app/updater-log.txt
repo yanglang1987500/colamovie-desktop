@@ -1,0 +1,5 @@
+AppPath: D:\workspace\colamovie-desktop\app/
+AppPathFolder: 
+1.0.0
+Update available: 1.0.1
+Downloading https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.zip

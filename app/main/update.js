@@ -1,0 +1,46 @@
+const EAU = require('electron-asar-hot-updater-sniyve');
+const { app, dialog } = require('electron');
+const packageInfo = require('../package.json');
+let fn = () => {};
+module.exports = {
+  init: () => {
+    EAU.init({
+      'api': 'https://raw.githubusercontent.com/yanglang1987500/colamovie-desktop/master/update.json', // The API EAU will talk to
+      'server': false, // Where to check. true: server side, false: client side, default: true.
+      'debug': true, // Default: false.
+      'body': {
+        name: packageInfo.name,
+        current: packageInfo.version
+      }
+    });
+  },
+  check: (callback) => {
+    console.log('check')
+    EAU.check(function (error, last, body) {
+      console.log(error, body)
+      callback(error, body);
+    });
+  },
+  update: (options) => {
+    console.log('update')
+    const onProgress = options.onProgress || fn;
+    const onError = options.onPronErrorogress || fn;
+    const onComplete = options.onComplete || fn;
+    EAU.progress(function (state) {
+      onProgress(state);
+    });
+    EAU.download(function (error) {
+      if (error) {
+        onError(error);
+        return false;
+      }
+      onComplete();
+      if (process.platform === 'darwin') {
+        app.relaunch()
+        app.quit()
+      } else {
+        app.quit()
+      }
+    })
+  }
+};

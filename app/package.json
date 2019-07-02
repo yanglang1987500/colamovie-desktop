@@ -1,0 +1,13 @@
+{
+  "name": "colamovie-desktop",
+  "main": "./main.js",
+  "version": "1.0.4",
+  "productName": "Cola Movie",
+  "description": "colamovie-desktop",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron-asar-hot-updater-sniyve": "^1.0.0",
+    "nodecast-js": "^1.0.3"
+  }
+}

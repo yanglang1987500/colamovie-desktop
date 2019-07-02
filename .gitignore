@@ -1,0 +1,12 @@
+node_modules/
+/.vscode
+dist/
+fe-toolkit/*
+*.scssc
+.sass-cache/
+.sass-cache/*
+scripts/*
+coverage/
+coverage/*
+update.zip
+app/node_modules/
