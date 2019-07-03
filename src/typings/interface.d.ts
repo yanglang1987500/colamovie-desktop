@@ -131,3 +131,8 @@ interface IUpdateInfo {
   asar: string;
   info: string;
 }
+
+interface ITV {
+  title: string;
+  url: string;
+}

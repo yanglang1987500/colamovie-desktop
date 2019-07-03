@@ -41,3 +41,5 @@ export { default as Types } from './types';
 export { default as Search } from './search';
 export { default as Type } from './type';
 export { default as History } from './history';
+export { default as Tvs } from './tvs';
+export { default as TvPlay } from './tvPlay';

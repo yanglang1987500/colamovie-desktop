@@ -12,7 +12,7 @@ class Header extends React.Component<IHeaderProps, IHeaderStates> {
   };
 
   render() {
-    const { title = '', back = true, search = false, classify = false, home = false,
+    const { title = '', back = true, search = false, classify = false, home = false, tv = false,
       history = false, push = false, edit = false, onHome = fn, onEdit = fn, onPush = fn, onBack = fn } = this.props;
     const { editable } = this.state;
     return (
@@ -34,6 +34,7 @@ class Header extends React.Component<IHeaderProps, IHeaderStates> {
             {push && <span className="iconfont icon-tv icon-btn" onClick={() => onPush()} title="投屏" />}
             {classify && <span className="iconfont icon-classify icon-btn" onClick={() => window.location.href="#/types"} title="分类" />}
             {history && <span className="iconfont icon-history icon-btn" onClick={() => window.location.href="#/history"} title="观看记录" />}
+            {tv && <span className="iconfont icon-tv_icon icon-btn" onClick={() => window.location.href="#/tvs"} title="电视台" />}
           </div>
           
         </div>
@@ -51,6 +52,7 @@ interface IHeaderProps extends Partial<IBusinessProps> {
   push?: boolean;
   edit?: boolean;
   home?: boolean;
+  tv?: boolean;
   onHome?: () => void;
   onPush?: () => void;
   onBack?: () => void;
