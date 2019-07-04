@@ -620,3 +620,33 @@ No updates available
 No updates available
 1.0.4
 No updates available
+AppPath: /Users/yanglang/Documents/workspace/colamovie-desktop/
+AppPathFolder: 
+1.0.5
+No updates available
+AppPath: /Users/yanglang/Documents/workspace/colamovie-desktop/
+AppPathFolder: 
+1.0.5
+No updates available
+AppPath: /Users/yanglang/Documents/workspace/colamovie-desktop/
+AppPathFolder: 
+1.0.5
+No updates available
+AppPath: /Users/yanglang/Documents/workspace/colamovie-desktop/
+AppPathFolder: 
+1.0.5
+No updates available
+AppPath: /Users/yanglang/Documents/workspace/colamovie-desktop/
+AppPathFolder: 
+1.0.5
+No updates available
+AppPath: /Users/yanglang/Documents/workspace/colamovie-desktop/
+AppPathFolder: 
+AppPath: /Users/yanglang/Documents/workspace/colamovie-desktop/
+AppPathFolder: 
+1.0.5
+No updates available
+AppPath: /Users/yanglang/Documents/workspace/colamovie-desktop/
+AppPathFolder: 
+1.0.5
+No updates available
