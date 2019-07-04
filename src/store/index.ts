@@ -134,7 +134,7 @@ class Store {
           param.vodids && (searchParam.vodids = param.vodids);
         }
         return Q(http.get(url, { params: searchParam }));
-      }
+      },
     };
   }
 }

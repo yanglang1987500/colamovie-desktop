@@ -1,19 +1,15 @@
 const tvs = [
   {
-    "title": "HBO",
-    "url": "http://161.0.157.6/PLTV/88888888/224/3221227026/01.m3u8"
-  },
-  {
     "title": "CCTV1",
-    "url": "http://112.17.40.140/PLTV/88888888/224/3221226541/index.m3u8"
+    "url": "http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"
   },
   {
     "title": "CCTV2",
-    "url": "http://112.17.40.140/PLTV/88888888/224/3221226138/index.m3u8"
+    "url": "http://ivi.bupt.edu.cn/hls/cctv2.m3u8"
   },
   {
     "title": "CCTV3",
-    "url": "http://112.17.40.140/PLTV/88888888/224/3221226485/index.m3u8"
+    "url": "http://ivi.bupt.edu.cn/hls/cctv3hd.m3u8"
   },
   {
     "title": "CCTV4",
@@ -21,19 +17,19 @@ const tvs = [
   },
   {
     "title": "CCTV5",
-    "url": "http://112.17.40.140/PLTV/88888888/224/3221226687/index.m3u8"
+    "url": "http://ivi.bupt.edu.cn/hls/cctv5.m3u8"
   },
   {
     "title": "CCTV6",
-    "url": "http://112.17.40.140/PLTV/88888888/224/3221226487/index.m3u8"
+    "url": "http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8"
   },
   {
     "title": "CCTV7",
-    "url": "http://112.17.40.140/PLTV/88888888/224/3221226122/index.m3u8"
+    "url": "http://ivi.bupt.edu.cn/hls/cctv7.m3u8"
   },
   {
     "title": "CCTV8",
-    "url": "http://112.17.40.140/PLTV/88888888/224/3221226330/index.m3u8"
+    "url": "http://ivi.bupt.edu.cn/hls/cctv8hd.m3u8"
   },
   {
     "title": "CCTV9",
@@ -41,7 +37,7 @@ const tvs = [
   },
   {
     "title": "CCTV10",
-    "url": "http://112.17.40.140/PLTV/88888888/224/3221226199/index.m3u8"
+    "url": "http://ivi.bupt.edu.cn/hls/cctv10.m3u8"
   },
   {
     "title": "CCTV14",
@@ -53,11 +49,11 @@ const tvs = [
   },
   {
     "title": "湖南卫视",
-    "url": "http://112.50.243.8/PLTV/88888888/224/3221225935/1.m3u8"
+    "url": "http://ivi.bupt.edu.cn/hls/hunanhd.m3u8"
   },
   {
     "title": "浙江卫视",
-    "url": "http://112.17.40.140/PLTV/88888888/224/3221226474/index.m3u8"
+    "url": "http://223.110.241.200:6610/gitv/live1/ZJWS-HD/ZJWS-HD/index.m3u8"
   },
   {
     "title": "深圳卫视",
@@ -65,15 +61,15 @@ const tvs = [
   },
   {
     "title": "东方卫视",
-    "url": "http://112.17.40.140/PLTV/88888888/224/3221226142/index.m3u8"
+    "url": "http://ivi.bupt.edu.cn/hls/dfhd.m3u8"
   },
   {
     "title": "北京卫视",
-    "url": "http://112.17.40.140/PLTV/88888888/224/3221226164/index.m3u8"
+    "url": "http://ivi.bupt.edu.cn/hls/btv1.m3u8"
   },
   {
     "title": "江苏卫视",
-    "url": "http://112.17.40.140/PLTV/88888888/224/3221226140/index.m3u8"
+    "url": "http://ivi.bupt.edu.cn/hls/jshd.m3u8"
   },
   {
     "title": "天津卫视",
@@ -89,7 +85,7 @@ const tvs = [
   },
   {
     "title": "山东卫视",
-    "url": "http://112.17.40.140/PLTV/88888888/224/3221226144/index.m3u8"
+    "url": "http://ksdlive.iqilu.com/live2/sdtv.m3u8"
   },
   {
     "title": "广东卫视",
@@ -97,7 +93,7 @@ const tvs = [
   },
   {
     "title": "河北卫视",
-    "url": "http://112.50.243.8/PLTV/88888888/224/3221226828/1.m3u8"
+    "url": "http://weblive.hebtv.com/live/hbwsbq_lc/index.m3u8"
   },
   {
     "title": "辽宁卫视",

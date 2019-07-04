@@ -27,3 +27,4 @@ declare module "classnames";
 declare module "nodecast-js";
 declare module "electron";
 declare module "react-little-toast";
+declare module "react-dplayer";

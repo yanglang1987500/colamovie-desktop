@@ -82,12 +82,11 @@ class Play extends React.Component<IPlayProps, IPlayStates> {
     }
   }
 
-  onTimeUpdate(e: IPlayerProcess) {
-    const { playedSeconds } = e;
-    if (playedSeconds < 5) return;
+  onTimeUpdate(currenTime: number) {
+    if (currenTime < 5) return;
     const { album, current, videoList } = this.state;
     history.updateProgressToHistory(album, current,
-      playedSeconds, videoList.find(v => v.originIndex === current).title);
+      currenTime, videoList.find(v => v.originIndex === current).title);
   }
 
   removeProgressFromHistory() {
@@ -120,11 +119,13 @@ class Play extends React.Component<IPlayProps, IPlayStates> {
           <Header home back search push onPush={this.onPushBtnClick} title={album.vod_name} />
           {!iina && <div style={{ textAlign: 'center', marginBottom: 20 }}>
             <Player
-              onProgress={(data: IPlayerProcess) => this.onTimeUpdate(data)}
+              onProgress={(currentTime: number) => this.onTimeUpdate(currentTime)}
               style={{ display: 'inline-block'}}
               width="100%"
+              poster={album.vod_pic}
               controls
               initialTime={this.getProgressFromHistory()}
+              onEnded={this.onNext}
               progressInterval={2000}
               url={url}
               playing

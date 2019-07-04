@@ -41,20 +41,18 @@ class TvPlay extends React.Component<ITvPlayProps, ITvPlayStates> {
     const tvIndex = getParam('tvIndex');
     const tvItem = tvData[parseInt(tvIndex || 0)];
     const url = tvItem.url;
-    return <div className='page'>
-      <div className="filter_main">
-          <Header home back search push onPush={this.onPushBtnClick} title={tvItem.title} />
-          {!iina && <div style={{ textAlign: 'center', marginBottom: 20 }}>
-            <Player
-              style={{ display: 'inline-block'}}
-              width="100%"
-              height="80vh"
-              controls
-              url={url}
-              playing
-            />
-          </div>}
-        </div>
+    return <div className='page' style={{padding: 0}}>
+        <Header home back search push onPush={this.onPushBtnClick} title={tvItem.title} />
+        {!iina && <div style={{ textAlign: 'center' }}>
+          <Player
+            style={{ display: 'inline-block', verticalAlign: 'top'}}
+            width="100%"
+            height="calc(100vh - 70px)"
+            controls
+            url={url}
+            playing
+          />
+        </div>}
         <Drawer
           open={this.state.dlnaDrawer}
           onMaskClick={() => { this.setState({ dlnaDrawer: false }); DLNA.stop();}}
