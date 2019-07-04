@@ -19,26 +19,27 @@ export default class Player extends Component<IPlayerProps, IPlayerState> {
   seekTo = () => {
     const { initialTime } = this.props;
     setTimeout(() => {
-      this.player && this.player.dp.seek(initialTime);
-      this.player.dp.play();
+      try {
+        this.player && this.player.dp.seek(initialTime);
+        this.player.dp.play();
+      } catch(e) {}
     }, 10);
   }
 
   render() {
-    const { url, initialTime, onProgress, poster, onEnded } = this.props;
+    const { url, initialTime, onProgress, poster, onEnded, height = 420 } = this.props;
     const props = { ...this.props };
     delete props.initialTime;
     return <DPlayer
       ref={(dom: any) => this.player = dom }
       width="100%"
-      height="400px"
       autoplay
       controls
       contextmenu={[]}
-      onProgress={() => this.player && onProgress(this.player.dp.video.currentTime)}
+      onProgress={() => this.player && onProgress && onProgress(this.player.dp.video.currentTime)}
       onEnded={() => onEnded()}
       progressInterval={2000}
-      style={{ height: 400, background: 'transparent' }}
+      style={{ height, background: 'transparent' }}
       video={{
         url,
         pic: poster,
@@ -66,6 +67,7 @@ interface IPlayerProps {
   url: string;
   initialTime?: number;
   [key: string]: any;
+  height?: any;
   onProgress?: (currentTime: number) => void;
   onEnded?:() => void;
 }
