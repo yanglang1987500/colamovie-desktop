@@ -3,7 +3,6 @@ import http, { Q } from '@http';
 import LoadingData from "./loadingData";
 import { filterChar, filterSensitive } from '@common/utils/filter';
 import { albumType, albumTypes } from '@common/enums/constant';
-import tvData from './data/tv';
 
 const disableType = ['福利片', '伦理片', '连续剧'];
 class Store {
@@ -12,7 +11,8 @@ class Store {
     this.globalData = new Map<number, LoadingData<IAlbum[]>>();
     Array(100).fill(1).forEach((i, index) => {
       this.globalData.set(index, new LoadingData<IAlbum[]>([]));
-    })
+    });
+    this.fetchTvData();
   }
 
   @observable
@@ -50,10 +50,18 @@ class Store {
   typeList: LoadingData<IType[]> = new LoadingData([]);
 
   @observable
-  tvData: ITV[] = tvData;
+  tvData: ITV[] = [];
 
   getAlbumListByType(typeId: number) :LoadingData<IAlbum[]> {
     return this.globalData.get(typeId);
+  }
+
+  @action
+  async fetchTvData() {
+    const tvData = await this.api().fetchTvData();
+    runInAction(() => {
+      this.tvData = tvData;
+    })
   }
 
   @action
@@ -135,6 +143,7 @@ class Store {
         }
         return Q(http.get(url, { params: searchParam }));
       },
+      fetchTvData: (): Promise<ITV[]> => Q(http.get('http://ptz0pgtd0.bkt.clouddn.com/tv.json')) 
     };
   }
 }

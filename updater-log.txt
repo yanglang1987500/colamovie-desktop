@@ -664,3 +664,27 @@ No updates available
 No updates available
 1.0.6
 No updates available
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.6
+No updates available
+1.0.6
+No updates available
+1.0.6
+No updates available
+1.0.6
+No updates available
+1.0.6
+No updates available
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.6
+No updates available
+AppPath: D:\workspace\colamovie-desktop/
+AppPathFolder: 
+1.0.6
+No updates available
+1.0.6
+No updates available
+1.0.6
+No updates available
