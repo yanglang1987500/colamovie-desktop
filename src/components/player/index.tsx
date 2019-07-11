@@ -12,8 +12,12 @@ export default class Player extends Component<IPlayerProps, IPlayerState> {
   }
 
   componentDidUpdate(prevProps: IPlayerProps, prevState: IPlayerState) {
-    if (this.props.url !== prevProps.url)
+    if (this.props.url !== prevProps.url) {
       this.seekTo();
+      if (this.player && this.player.dp) {
+        this.player.dp.switchVideo(this.getVideoInfo());
+      }      
+    }
   }
 
   seekTo = () => {
@@ -26,8 +30,30 @@ export default class Player extends Component<IPlayerProps, IPlayerState> {
     }, 10);
   }
 
+  getVideoInfo() {
+    const { url, poster } = this.props;
+    return {
+      url,
+      pic: poster,
+      type: 'customHls',
+      customType: {
+        'customHls': function (video: any, player: any) {
+          var engine = new window.p2pml.hlsjs.Engine();
+          var hls = new window.Hls({
+              liveSyncDurationCount: 7,
+              loader: engine.createLoaderClass()
+          });
+          window.p2pml.hlsjs.initHlsJsPlayer(hls);
+          hls.loadSource(video.src);
+          hls.attachMedia(video);
+        }
+      }
+    };
+  }
+
   render() {
     const { url, initialTime, onProgress, poster, onEnded, height = 420 } = this.props;
+    console.log(url);
     const props = { ...this.props };
     delete props.initialTime;
     return <DPlayer
@@ -40,24 +66,7 @@ export default class Player extends Component<IPlayerProps, IPlayerState> {
       onEnded={() => onEnded()}
       progressInterval={2000}
       style={{ height, background: 'transparent' }}
-      video={{
-        url,
-        pic: poster,
-        type: 'customHls',
-        customType: {
-          'customHls': function (video: any, player: any) {
-            var engine = new window.p2pml.hlsjs.Engine();
-            var hls = new window.Hls({
-                liveSyncDurationCount: 7,
-                loader: engine.createLoaderClass()
-            });
-            window.p2pml.hlsjs.initHlsJsPlayer(hls);
-            hls.loadSource(video.src);
-            hls.attachMedia(video);
-
-          }
-        }
-      }}
+      video={this.getVideoInfo()}
       playing
     />;
   }
