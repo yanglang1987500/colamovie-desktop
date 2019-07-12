@@ -31,7 +31,6 @@ class Home extends React.Component<IHomeProps, IHomeStates> {
   }
 
   scroll = (scrollTop: number) => {
-    console.log(scrollTop)
     top = scrollTop;
   }
 
