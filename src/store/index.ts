@@ -83,9 +83,9 @@ class Store {
   @action
   async getVideoList(param?: IQueryParam) {
     const typeId = (param && param.typeId) || albumType.News;
-    if (this.globalData.get(typeId).data.length > 0) {
-      return;
-    }
+    // if (this.globalData.get(typeId).data.length > 0) {
+    //   return;
+    // }
     const result = await this.api().getVideoListMain(param);
     runInAction(() => {
       let list = result.data;
@@ -93,7 +93,7 @@ class Store {
       list = filterSensitive(list, (album) => album.vod_name);
       list = filterChar(list, 'vod_content');
       const typeId = (param && param.typeId) || albumType.News;
-      this.globalData.get(parseInt(`${typeId}`, 10)).setLoadedData(list);
+      this.globalData.get(parseInt(`${typeId}`, 10)).setLoadedData([...this.globalData.get(typeId).data, ...list]);
     });
   }
 

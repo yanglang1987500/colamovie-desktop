@@ -6,21 +6,44 @@ import { Link } from "react-router-dom";
 import { Spin } from "@components";
 import { getParam } from "@common/utils";
 import Header from "./header";
+import PubSub from "@common/utils/pubsub";
+
+let top = 0;
 
 @inject(Business)
 @observer
 class Type extends React.Component<ITypeProps, ITypeStates> {
-
 
   state: ITypeStates = {
     typeName: ''
   }
 
   componentDidMount() {
-    const { getVideoList } = this.props;
+    const { getVideoList, getAlbumListByType } = this.props;
     const typeId = parseInt(getParam('id') || '0');
     this.setState({ typeName: getParam('name') || '' });
-    getVideoList({ typeId: typeId });
+    const albumData = getAlbumListByType(typeId);
+    albumData.data.length === 0 && getVideoList({ typeId: typeId, pageIndex: 1 });
+    PubSub.notify('scrollTo', top);
+    PubSub.subscribe('scroll_bottom', this.loadMore).subscribe('scroll', this.scroll);;
+  }
+
+  loadMore = () => {
+    const { getVideoList, getAlbumListByType } = this.props;
+    const typeId = parseInt(getParam('id') || '0');
+    const album = getAlbumListByType(typeId);
+    if (!album.isLoading) {
+      album.setLoading();
+      getVideoList({ typeId, pageIndex: album.data.length/40+1 });
+    }
+  }
+
+  scroll = (scrollTop: number) => {
+    top = scrollTop;
+  }
+
+  componentWillUnmount() {
+    PubSub.unsubscribe('scroll_bottom', this.loadMore).unsubscribe('scroll', this.scroll);
   }
 
   render() {
@@ -46,7 +69,7 @@ class Type extends React.Component<ITypeProps, ITypeStates> {
         : data.isNoData ? <div className="no-data">没有数据~</div> : <div className='page'>
           <Spin style={{ height: '80vh' }} />
         </div>}
-        
+        {data.isLoading && list.length > 0 && <Spin style={{ height: '160px' }} />}
       </React.Fragment>
     );
   }

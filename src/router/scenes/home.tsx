@@ -5,15 +5,38 @@ import { Business, IBusinessProps } from "@business/index";
 import { Link } from "react-router-dom";
 import { Spin } from "@components";
 import Header from "./header";
+import PubSub from "@common/utils/pubsub";
 
+let top = 0;
 
 @inject(Business)
 @observer
 class Home extends React.Component<IHomeProps, IHomeStates> {
 
   componentDidMount() {
-    const { getVideoList } = this.props;
-    getVideoList();
+    const { getVideoList, getAlbumListByType } = this.props;
+    const albumData = getAlbumListByType(0);
+    albumData.data.length === 0 && getVideoList({ pageIndex: 1 });
+    PubSub.notify('scrollTo', top);
+    PubSub.subscribe('scroll_bottom', this.loadMore).subscribe('scroll', this.scroll);
+  }
+
+  loadMore = () => {
+    const { getVideoList, getAlbumListByType } = this.props;
+    const album = getAlbumListByType(0);
+    if (!album.isLoading) {
+      album.setLoading();
+      getVideoList({ pageIndex: album.data.length/40+1 });
+    }
+  }
+
+  scroll = (scrollTop: number) => {
+    console.log(scrollTop)
+    top = scrollTop;
+  }
+
+  componentWillUnmount() {
+    PubSub.unsubscribe('scroll_bottom', this.loadMore).unsubscribe('scroll', this.scroll);
   }
 
   render() {
@@ -38,6 +61,7 @@ class Home extends React.Component<IHomeProps, IHomeStates> {
         : data.isNoData ? <div className="no-data">没有数据~</div> : <div className='page'>
           <Spin style={{ height: '80vh' }} />
         </div>}
+        {data.isLoading && list.length > 0 && <Spin style={{ height: '160px' }} />}
       </React.Fragment>
     );
   }

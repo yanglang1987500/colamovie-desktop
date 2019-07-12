@@ -17,6 +17,7 @@ export default class LoadingData<T> {
   @action.bound
   setLoading() {
     this.isLoading = true;
+    return this;
   }
 
   @action.bound
@@ -38,6 +39,7 @@ export default class LoadingData<T> {
     if (isArrayNoData || isEmpty) {
       this.isNoData = true;
     }
+    return this;
   }
   constructor(initData: T) {
     this.data = initData;

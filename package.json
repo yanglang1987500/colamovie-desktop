@@ -1,6 +1,6 @@
 {
   "name": "colamovie-desktop",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "productName": "Cola Movie",
   "description": "colamovie-desktop",
   "main": "./app/main.js",
@@ -132,6 +132,9 @@
     "afterPack": "./build/packAsar.js",
     "directories": {
       "buildResources": "./app"
+    },
+    "electronDownload": {
+      "mirror": "https://npm.taobao.org/mirrors/electron/"
     },
     "mac": {
       "target": [

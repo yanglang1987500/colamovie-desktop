@@ -7,8 +7,15 @@ export default class Player extends Component<IPlayerProps, IPlayerState> {
 
   player: any;
 
+  hls: any;
+
   componentDidMount() {
     this.seekTo();
+  }
+
+  componentWillUnmount() {
+    this.player && this.player.dp && this.player.dp.destroy();
+    this.hls && this.hls.destroy();
   }
 
   componentDidUpdate(prevProps: IPlayerProps, prevState: IPlayerState) {
@@ -31,6 +38,7 @@ export default class Player extends Component<IPlayerProps, IPlayerState> {
   }
 
   getVideoInfo() {
+    const self = this;
     const { url, poster } = this.props;
     return {
       url,
@@ -39,7 +47,7 @@ export default class Player extends Component<IPlayerProps, IPlayerState> {
       customType: {
         'customHls': function (video: any, player: any) {
           var engine = new window.p2pml.hlsjs.Engine();
-          var hls = new window.Hls({
+          var hls = self.hls = new window.Hls({
               liveSyncDurationCount: 7,
               loader: engine.createLoaderClass()
           });
@@ -53,7 +61,6 @@ export default class Player extends Component<IPlayerProps, IPlayerState> {
 
   render() {
     const { url, initialTime, onProgress, poster, onEnded, height = 420 } = this.props;
-    console.log(url);
     const props = { ...this.props };
     delete props.initialTime;
     return <DPlayer
