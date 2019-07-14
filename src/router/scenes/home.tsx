@@ -24,9 +24,9 @@ class Home extends React.Component<IHomeProps, IHomeStates> {
   loadMore = () => {
     const { getVideoList, getAlbumListByType } = this.props;
     const album = getAlbumListByType(0);
-    if (!album.isLoading) {
+    if (!album.isLoading && !album.noMoreData) {
       album.setLoading();
-      getVideoList({ pageIndex: album.data.length/40+1 });
+      getVideoList({ pageIndex: Math.ceil(album.data.length/40)+1 });
     }
   }
 
@@ -60,7 +60,8 @@ class Home extends React.Component<IHomeProps, IHomeStates> {
         : data.isNoData ? <div className="no-data">没有数据~</div> : <div className='page'>
           <Spin style={{ height: '80vh' }} />
         </div>}
-        {data.isLoading && list.length > 0 && <Spin style={{ height: '160px' }} />}
+        {!data.noMoreData && data.isLoading && list.length > 0 && <Spin style={{ height: '160px' }} />}
+        {!data.isNoData && data.noMoreData && <div className="no-more-data">没有更多数据了~</div>}
       </React.Fragment>
     );
   }

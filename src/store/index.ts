@@ -93,7 +93,14 @@ class Store {
       list = filterSensitive(list, (album) => album.vod_name);
       list = filterChar(list, 'vod_content');
       const typeId = (param && param.typeId) || albumType.News;
-      this.globalData.get(parseInt(`${typeId}`, 10)).setLoadedData([...this.globalData.get(typeId).data, ...list]);
+      const data = this.globalData.get(parseInt(`${typeId}`, 10));
+      if (data.data.length > 0) {
+        list.length > 0 ? data.setLoadedData([...this.globalData.get(typeId).data, ...list]):
+        data.setNoMoreData();
+      } else {
+        data.setLoadedData(list);
+      }
+      
     });
   }
 
