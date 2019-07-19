@@ -838,3 +838,7 @@ No updates available
 No updates available
 1.0.9
 No updates available
+AppPath: /Users/yanglang/Documents/workspace/colamovie-desktop/
+AppPathFolder: 
+1.0.10
+No updates available

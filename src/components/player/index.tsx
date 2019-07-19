@@ -67,6 +67,7 @@ export default class Player extends Component<IPlayerProps, IPlayerState> {
       ref={(dom: any) => this.player = dom }
       width="100%"
       autoplay
+      preload='none'
       controls
       contextmenu={[]}
       onProgress={() => this.player && onProgress && onProgress(this.player.dp.video.currentTime)}
