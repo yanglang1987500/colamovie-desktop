@@ -135,7 +135,7 @@ class Store {
   api() {
     return {      
       getVideoListMain: (param?: IQueryParam): Promise<IResult> => {
-        return this.api().fetch('http://www.zuidazy.net/inc/feifei3.4/', param);
+        return this.api().fetch('http://www.zdziyuan.com/inc/feifei3.4/', param);
       },
       getVideoListSecond: (param?: IQueryParam): Promise<IResult> => {
         return this.api().fetch('http://www.apiokzy.com/inc/feifei3s/', param);
@@ -150,7 +150,7 @@ class Store {
         }
         return Q(http.get(url, { params: searchParam }));
       },
-      fetchTvData: (): Promise<ITV[]> => Q(http.get('http://ptz0pgtd0.bkt.clouddn.com/tv.json')) 
+      fetchTvData: (): Promise<ITV[]> => Q(http.get('http://cdn.yaoleyaotou.xin/tv.json')) 
     };
   }
 }

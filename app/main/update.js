@@ -2,7 +2,7 @@ const EAU = require('electron-asar-hot-updater-sniyve');
 const { app, dialog } = require('electron');
 const packageInfo = require('../package.json');
 let fn = () => {};
-const api = process.platform === 'darwin' ? 'http://ptz0pgtd0.bkt.clouddn.com/update-darwin.json' : 'http://ptz0pgtd0.bkt.clouddn.com/update-win32.json';
+const api = process.platform === 'darwin' ? 'http://cdn.yaoleyaotou.xin/update-darwin.json' : 'http://cdn.yaoleyaotou.xin/update-win32.json';
 module.exports = {
   init: () => {
     EAU.init({

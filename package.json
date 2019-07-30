@@ -1,6 +1,6 @@
 {
   "name": "colamovie-desktop",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "productName": "Cola Movie",
   "description": "colamovie-desktop",
   "main": "./app/main.js",
