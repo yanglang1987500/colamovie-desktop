@@ -6,21 +6,44 @@ import { Link } from "react-router-dom";
 import { Spin } from "@components";
 import { getParam } from "@common/utils";
 import Header from "./header";
+import PubSub from "@common/utils/pubsub";
+
+let top = 0;
 
 @inject(Business)
 @observer
 class Type extends React.Component<ITypeProps, ITypeStates> {
-
 
   state: ITypeStates = {
     typeName: ''
   }
 
   componentDidMount() {
-    const { getVideoList } = this.props;
+    const { getVideoList, getAlbumListByType } = this.props;
     const typeId = parseInt(getParam('id') || '0');
     this.setState({ typeName: getParam('name') || '' });
-    getVideoList({ typeId: typeId });
+    const albumData = getAlbumListByType(typeId);
+    albumData.data.length === 0 && getVideoList({ typeId: typeId, pageIndex: 1 });
+    PubSub.notify('scrollTo', top);
+    PubSub.subscribe('scroll_bottom', this.loadMore).subscribe('scroll', this.scroll);;
+  }
+
+  loadMore = () => {
+    const { getVideoList, getAlbumListByType } = this.props;
+    const typeId = parseInt(getParam('id') || '0');
+    const album = getAlbumListByType(typeId);
+    if (!album.isLoading && !album.noMoreData) {
+      album.setLoading();
+      getVideoList({ typeId, pageIndex: Math.ceil(album.data.length/40)+1 });
+    }
+  }
+
+  scroll = (scrollTop: number) => {
+    top = scrollTop;
+  }
+
+  componentWillUnmount() {
+    PubSub.unsubscribe('scroll_bottom', this.loadMore).unsubscribe('scroll', this.scroll);
   }
 
   render() {
@@ -35,7 +58,7 @@ class Type extends React.Component<ITypeProps, ITypeStates> {
     }));
     return (
       <React.Fragment>
-        <Header home search back title={decodeURIComponent(this.state.typeName)} />
+        <Header home search back title={decodeURIComponent(this.state.typeName)} onBack={() => top = 0} onHome={() => top = 0} />
         {list.length > 0 ? <div className='album-container'>
           {list.map((item: any) => <Link key={item.id} to={`/play?id=${item.id}`}><div className='album-pic scale'>
             <div className='album-pic-image' style={{ backgroundImage: `url(${item.image})` }}>
@@ -46,7 +69,8 @@ class Type extends React.Component<ITypeProps, ITypeStates> {
         : data.isNoData ? <div className="no-data">没有数据~</div> : <div className='page'>
           <Spin style={{ height: '80vh' }} />
         </div>}
-        
+        {!data.noMoreData && data.isLoading && list.length > 0 && <Spin style={{ height: '160px' }} />}
+        {!data.isNoData && data.noMoreData && <div className="no-more-data">没有更多数据了~</div>}
       </React.Fragment>
     );
   }

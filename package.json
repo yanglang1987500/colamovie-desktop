@@ -1,6 +1,6 @@
 {
   "name": "colamovie-desktop",
-  "version": "1.0.6",
+  "version": "1.0.14",
   "productName": "Cola Movie",
   "description": "colamovie-desktop",
   "main": "./app/main.js",
@@ -8,6 +8,7 @@
     "dev": "./node_modules/.bin/webpack-dev-server --mode development --config ./build/webpack.config.js",
     "webpack": "./node_modules/.bin/webpack --mode production --config ./build/webpack.config.js",
     "publish": "electron-builder",
+    "version": "node ./build/updateVersion",
     "build-mac": "electron-builder --mac --x64",
     "build-win": "electron-builder --win --x64"
   },
@@ -131,6 +132,9 @@
     "afterPack": "./build/packAsar.js",
     "directories": {
       "buildResources": "./app"
+    },
+    "electronDownload": {
+      "mirror": "https://npm.taobao.org/mirrors/electron/"
     },
     "mac": {
       "target": [

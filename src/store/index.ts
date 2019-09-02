@@ -3,7 +3,6 @@ import http, { Q } from '@http';
 import LoadingData from "./loadingData";
 import { filterChar, filterSensitive } from '@common/utils/filter';
 import { albumType, albumTypes } from '@common/enums/constant';
-import tvData from './data/tv';
 
 const disableType = ['福利片', '伦理片', '连续剧'];
 class Store {
@@ -12,7 +11,8 @@ class Store {
     this.globalData = new Map<number, LoadingData<IAlbum[]>>();
     Array(100).fill(1).forEach((i, index) => {
       this.globalData.set(index, new LoadingData<IAlbum[]>([]));
-    })
+    });
+    this.fetchTvData();
   }
 
   @observable
@@ -50,10 +50,18 @@ class Store {
   typeList: LoadingData<IType[]> = new LoadingData([]);
 
   @observable
-  tvData: ITV[] = tvData;
+  tvData: ITV[] = [];
 
   getAlbumListByType(typeId: number) :LoadingData<IAlbum[]> {
     return this.globalData.get(typeId);
+  }
+
+  @action
+  async fetchTvData() {
+    const tvData = await this.api().fetchTvData();
+    runInAction(() => {
+      this.tvData = tvData;
+    })
   }
 
   @action
@@ -75,9 +83,9 @@ class Store {
   @action
   async getVideoList(param?: IQueryParam) {
     const typeId = (param && param.typeId) || albumType.News;
-    if (this.globalData.get(typeId).data.length > 0) {
-      return;
-    }
+    // if (this.globalData.get(typeId).data.length > 0) {
+    //   return;
+    // }
     const result = await this.api().getVideoListMain(param);
     runInAction(() => {
       let list = result.data;
@@ -85,7 +93,14 @@ class Store {
       list = filterSensitive(list, (album) => album.vod_name);
       list = filterChar(list, 'vod_content');
       const typeId = (param && param.typeId) || albumType.News;
-      this.globalData.get(parseInt(`${typeId}`, 10)).setLoadedData(list);
+      const data = this.globalData.get(parseInt(`${typeId}`, 10));
+      if (data.data.length > 0) {
+        list.length > 0 ? data.setLoadedData([...this.globalData.get(typeId).data, ...list]):
+        data.setNoMoreData();
+      } else {
+        data.setLoadedData(list);
+      }
+      
     });
   }
 
@@ -135,6 +150,7 @@ class Store {
         }
         return Q(http.get(url, { params: searchParam }));
       },
+      fetchTvData: (): Promise<ITV[]> => Q(http.get('http://cdn.yaoleyaotou.xin/tv.json')) 
     };
   }
 }

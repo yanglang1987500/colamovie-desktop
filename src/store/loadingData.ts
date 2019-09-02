@@ -9,6 +9,9 @@ export default class LoadingData<T> {
   isNoData: boolean = false;
 
   @observable
+  noMoreData: boolean = false;
+
+  @observable
   data: T = null;
   get() {
     return this.data;
@@ -17,7 +20,15 @@ export default class LoadingData<T> {
   @action.bound
   setLoading() {
     this.isLoading = true;
+    return this;
   }
+
+  @action.bound
+  setNoMoreData() {
+    this.noMoreData = true;
+    return this;
+  }
+
 
   @action.bound
   setUnLoading() {
@@ -38,6 +49,7 @@ export default class LoadingData<T> {
     if (isArrayNoData || isEmpty) {
       this.isNoData = true;
     }
+    return this;
   }
   constructor(initData: T) {
     this.data = initData;

@@ -1,4 +1,8 @@
-const tvs = [
+[
+  {
+    "title": "HBO中文",
+    "url": "http://218.202.220.2:5000/nn_live.m3u8?id=HBO"
+  },
   {
     "title": "CCTV1",
     "url": "http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"
@@ -99,6 +103,4 @@ const tvs = [
     "title": "辽宁卫视",
     "url": "http://112.50.243.8/PLTV/88888888/224/3221225947/1.m3u8"
   }
-];
-
-export default tvs;
+]

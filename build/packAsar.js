@@ -26,7 +26,6 @@ const walk = (path, zip) => {
     let item = dirList[i];
     let innerPath = path + '/' + item;
     if (fs.statSync(innerPath).isDirectory()) {
-        console.log(innerPath);
         zip.folder(innerPath);
         walk(path + '/' + item, zip);
     } else if (fs.statSync(innerPath).isFile()) {
