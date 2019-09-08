@@ -91,6 +91,7 @@ class Store {
       let list = result.data;
       this.setTypeList(result.list);
       list = filterSensitive(list, (album) => album.vod_name);
+      list = list.filter(album => album.vod_cid !== '17');
       list = filterChar(list, 'vod_content');
       const typeId = (param && param.typeId) || albumType.News;
       const data = this.globalData.get(parseInt(`${typeId}`, 10));
