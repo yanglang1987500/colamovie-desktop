@@ -42,7 +42,7 @@
     "@types/react-transition-group": "^2.0.16",
     "acorn": "^6.1.1",
     "autoprefixer": "^9.4.10",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel": "^6.5.2",
     "babel-core": "^6.26.3",
     "babel-jest": "^24.1.0",
